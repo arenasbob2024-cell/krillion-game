@@ -3,7 +3,7 @@
 import json, os, html
 from prompts import PROMPTS, TIER_NAMES, TIER_POINTS, tier_for
 
-BASE = "https://krillion-game.vercel.app"
+BASE = "https://krillion-game-lyart.vercel.app"
 NAME = "Krillion Game Guide"
 DATE = "2026-11-04"
 TAG = "Independent Krillion guide and practice tool"
