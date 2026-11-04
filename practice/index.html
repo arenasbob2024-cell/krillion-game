@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Krillion Practice Dive: Free 7-Prompt Training Game</title>
+<meta name="description" content="Play a free Krillion-style practice dive: seven prompts, 25 seconds each, rarity tiers and a depth meter. Original question bank, no sign-up, runs in your browser.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://krillion-game.vercel.app/practice/">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css?v=20261104">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Krillion Game Guide">
+<meta property="og:title" content="Krillion Practice Dive: Free 7-Prompt Training Game">
+<meta property="og:description" content="Play a free Krillion-style practice dive: seven prompts, 25 seconds each, rarity tiers and a depth meter. Original question bank, no sign-up, runs in your browser.">
+<meta property="og:url" content="https://krillion-game.vercel.app/practice/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#04121f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://krillion-game.vercel.app/practice/#page", "url": "https://krillion-game.vercel.app/practice/", "name": "Krillion Practice Dive: Free 7-Prompt Training Game", "description": "Play a free Krillion-style practice dive: seven prompts, 25 seconds each, rarity tiers and a depth meter. Original question bank, no sign-up, runs in your browser.", "inLanguage": "en", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "isPartOf": {"@type": "WebSite", "@id": "https://krillion-game.vercel.app/#site"}}, {"@type": "WebApplication", "@id": "https://krillion-game.vercel.app/practice/#app", "name": "Krillion Practice Dive", "url": "https://krillion-game.vercel.app/practice/", "description": "A free browser practice game with an original prompt bank: seven prompts, 25 seconds each, rarity-style scoring.", "applicationCategory": "GameApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://krillion-game.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Krillion Practice Dive", "item": "https://krillion-game.vercel.app/practice/"}]}]}</script>
+<script src="/data.js?v=20261104c" defer></script>
+<script src="/practice.js?v=20261104c" defer></script>
+</head>
+<body class="">
+<main>
+<header class="site">
+  <a class="brand" href="/">Krillion <span>Game Guide</span></a>
+  <nav class="site" aria-label="Site"><a href="/">Home</a><a href="/practice/" aria-current="page">Practice</a><a href="/how-to-play/">How to play</a><a href="/strategy/">Strategy</a><a href="/about/">About</a></nav>
+</header>
+<p class="breadcrumb"><a href="/">Home</a> › Krillion Practice Dive</p>
+<h1>Krillion Practice Dive</h1>
+
+<p class="lede">A free training dive in the shape of Krillion: seven prompts, 25 seconds per prompt, six rarity tiers and a 7,000-metre depth meter. The question bank is written for this site, and the tiers are our own estimates — this is a practice tool, not the official game.</p>
+
+
+<section class="dive" id="dive" aria-label="Krillion practice dive">
+  <div class="dive-top">
+    <span class="badge">Practice dive</span>
+    <span id="promptNo">Ready</span>
+  </div>
+  <div class="depth" aria-hidden="true"><div class="fill" id="depthFill"></div><div class="label" id="depthLabel">0 m / 7,000 m</div></div>
+
+  <div id="startPane">
+    <p>7 prompts · 25 seconds each · original question bank · runs entirely in your browser.</p>
+    <p class="small">Tip: say two or three valid answers in your head before you type. The first one is usually Plankton.</p>
+    <button id="startBtn" type="button">Start practice dive</button>
+  </div>
+
+  <div id="playPane" hidden>
+    <p class="cat" id="cat"></p>
+    <h2 id="promptText"></h2>
+    <form id="answerForm" autocomplete="off">
+      <label class="sr-only" for="answerInput">Your answer</label>
+      <input id="answerInput" name="answer" maxlength="60" placeholder="Type one answer…" autocapitalize="off" spellcheck="false">
+      <button id="submitBtn" type="submit">Submit</button>
+    </form>
+    <div class="timer" aria-hidden="true"><div class="fill" id="timerFill"></div></div>
+    <p id="timerText">25.0s</p>
+    <div id="feedback" role="status" aria-live="polite"></div>
+  </div>
+
+  <div id="endPane" hidden>
+    <p class="result-big" id="resultScore">0 / 700 pts</p>
+    <p class="result-sub" id="resultDepth">Depth reached: 0 m</p>
+    <p id="resultDetail"></p>
+    <div class="tierlist" id="tierList"></div>
+    <p><button id="againBtn" type="button">Play another dive</button> <button id="shareBtn" type="button" class="ghost">Copy result</button></p>
+  </div>
+</section>
+
+<h2>How this practice tool works</h2>
+<ul>
+<li><b>Seven prompts per round</b>, drawn from a bank of 20 categories written for this site.</li>
+<li><b>25 seconds per prompt.</b> Type an answer and submit. Our validator checks a curated answer list with aliases and tolerates a one-letter typo on longer words.</li>
+<li><b>Six tiers, same point values as the official game</b> (10/15/30/60/85/100). They are assigned by our own editorial judgement of how obvious each answer is — they are <b>not</b> Krillion’s real tiers and cannot be compared with official scores.</li>
+<li><b>Depth</b> is points × 10. Seven top-tier answers make 7,000 m.</li>
+<li><b>Nothing leaves your browser.</b> There are no accounts, no cookies and no network calls; your best score is stored in localStorage only.</li>
+</ul>
+
+<h2>Why the answer bank is small</h2>
+<p>The official game validates tens of thousands of possible answers per prompt. Our bank recognises roughly 20–22 answers per prompt, so a perfectly valid answer can be missing. When that happens, the tool says so and lets you try another answer before the timer expires. Treat the bank as a drill, not as a dictionary.</p>
+
+<h2>What this tool will not do</h2>
+<ul>
+<li>It does not show today’s official prompts, answers or results.</li>
+<li>It does not copy, embed or mirror krillion.io.</li>
+<li>It does not claim to predict your official score. Use it to practise recall, category reading and the 25-second rhythm.</li>
+</ul>
+
+<h2>Ready for the real thing?</h2>
+<p>Play the official Daily Dive at <a href="https://krillion.io/" rel="noopener nofollow">krillion.io</a>. If you want the rules first, read <a href="/how-to-play/">how scoring works</a>; if you want tactics, read the <a href="/strategy/">strategy guide</a>.</p>
+
+
+<div class="disclaimer">Independent fan guide and practice tool. Not affiliated with, endorsed by, or sponsored by Krillion or krillion.io. Krillion is the name of a game owned by its developer; all rights stay with its owner. Our practice prompts, answer lists and tiers are original estimates, not official Krillion data. Always play the official Daily Dive at <a href="https://krillion.io/" rel="noopener nofollow">krillion.io</a>.</div>
+<footer class="site">
+  <p><a href="/about/">About &amp; editorial policy</a> · <a href="/privacy/">Privacy</a> · <a href="/how-to-play/">How to play</a> · <a href="/strategy/">Strategy</a> · <a href="/practice/">Practice dive</a></p>
+  <p>Updated 2026-11-04. Official game: <a href="https://krillion.io/" rel="noopener nofollow">krillion.io</a>.</p>
+</footer>
+</main>
+
+</body>
+</html>
